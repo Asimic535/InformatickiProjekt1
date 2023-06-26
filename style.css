@@ -1,0 +1,71 @@
+
+
+html  {
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+
+}
+
+body {
+
+    background-image: url("./bmw_grill_pozadina.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
+    background-position: top;
+    
+}
+
+footer {
+
+    width: 100%;
+
+}
+
+.kontaktforma {
+
+    background-color: rgba(129, 129, 129, 0.825);
+    border-radius: 10px;
+
+}
+
+.box_karte{
+
+    overflow:hidden;
+    padding-bottom: 100%;
+    position:relative;
+    height:0;
+
+}
+
+.box_karte iframe{
+
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+
+}
+
+.my-form {
+    color: #1a273a;
+    font-size: medium;
+    font-weight: 500;
+}
+.my-form .btn-default {
+    background-color: #305896;
+    color: #fff;
+    border-radius: 0;
+}
+.my-form .btn-default:hover {
+    background-color: #4498C6;
+    color: #fff;
+}
+.my-form .form-control {
+    border-radius: 0;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BMW Modeli Devedesetih</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="./BMW_logo_bijeli.png"/>
+
+    <!-- Google font: Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;70">
+    
+    
+    <script>
+        // Početak KODA S INTERNETA, poravnava modalni popup na sredinu svake veličine ekrana!
+        $(document).ready(function(){
+            $("#modalniPopUp").modal('show');
+
+            function alignModal(){
+                var modalDialog = $(this).find(".modal-dialog");
+                
+                // Applying the top margin on modal to align it vertically center
+                modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+            }
+            // Align modal when it is displayed
+            $(".modal").on("shown.bs.modal", alignModal);
+            
+            // Align modal when user resize the window
+            $(window).on("resize", function(){
+                $(".modal:visible").each(alignModal);
+            });   
+        });
+        // Kraj KODA S INTERNETA
+    </script>
+    </head>
+    <body>
+
+        <!-- Modalni dijalog -->
+        <div id="modalniPopUp" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pretplatite se na naš Newsletter</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pretplatite se na naš newsletter i primajte najnovija ažuriranja i obavijesti ravno u inbox. Potpuno je besplatno i možete otkazati pretplatu bilo kada!</p>
+                        <form>
+                            <!-- Polje za unos e-adrese -->
+                            <input type="email" id="mailZaPretplatu" class="form-control mb-2" placeholder="Vaša e-mail adresa.." required>
+                            <!-- Dugme koje gasi modalni dijalog I ISPISUJE PODATKE U KONZOLU pozivom funkcije -->
+                            <a href="./BMD3.html"><button type="button" id="submitButton" onclick="spremiPodatkePretplatnika()" class="btn btn-info" data-bs-dismiss="modal">Pretplati se</button></a>
+                            <!-- Dugme koje samo gasi modalni dijalog -->
+                            <a href="./BMD3.html"><button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Ne sada</button></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZAGLAVLJE-->
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" onclick="alert1()">
+                <img src="./BMW_logo_bijeli_bez_pozadine.png" class="px-3" width="mx-auto" height="50" alt="BMW_logo_bijeli">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- IZBORNIK -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./BMD3.html">Početna</a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pomoć</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./O_nama.html">Kontakt</a>
+                    </li>
+                </ul>
+
+                <!-- PRETRAGA -->
+                <form class="d-flex">
+                <input class="form-control me-2" type="search" id="unosPretrage" placeholder="Unesite pojam..." aria-label="Search" style="margin-bottom: 6px;">
+                <button class="btn btn-outline-secondary" type="submit" onclick="pretraga()" style="margin-bottom: 6px;">Pretraži</button>
+                </form>
+
+            </div>
+            </div>
+        </nav>
+
+        <!-- (razmak da sadržaj ne podilazi pod Navbar, prazan prostor koji spušta sadržaj stranice za dužinu Navbara) -->
+        <br>
+        <br>
+        <br>
+
+
+        <!-- SADRZAJ -->
+        <div class="row justify-content-evenly" style="margin-inline: 2%;">
+            
+            <!-- E30 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e30/E30_crtez_400x224.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E30</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1982.-1994. <br> Zapremina: 1.6 L - 2.5 L </p>
+                            <a href="./e30/e30.html" class="btn btn-secondary">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E31 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e31/e31_crtez.png" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E31</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1990.-1999. <br> Zapremina: 4.0 L - 5.6 L </p>
+                            <a href="./e31/e31.html" class="btn btn-secondary">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E32 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e32/e32_crtez.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E32</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1987.-1994. <br> Zapremina: 3.0 L - 5.0 L </p>
+                            <a href="./e32/e32.html" class="btn btn-secondary">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E34 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e34/e34_skica.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E34</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1987.-1996. <br> Zapremina: 1.8 L - 4.0 L </p>
+                            <a href="./e34/e34.html" class="btn btn-secondary mt-2">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E36 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e36/e36_skica.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E36</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1990.-2000. <br> Zapremina: 1.6 L - 3.2 L </p>
+                            <a href="./e36/e36.html" class="btn btn-secondary mt-2">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E38 -->
+            <div class="col-xl-4 col-md-5 col-10 my-4">
+                <div class="container mt-3">
+                    <div class="card" style="width:auto">
+                        <img class="card-img-top" src="./e38/e38_skica.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body" style="background-color: rgba(133, 133, 133, 0.479);">
+                            <h4 class="card-title">BMW E38</h4>
+                            <p class="card-text" style="font-weight: 500;">Proizvodnja: 1995.-2001. <br> Zapremina: 2.8 L - 5.4 L </p>
+                            <a href="./e38/e38.html" class="btn btn-secondary mt-2">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PODNOZJE -->
+        <footer class="text-center text-lg-start bg-dark text-light pt-1 mt-5">
+            <section class="">
+            <div class="container text-center mt-5">
+                <div class="row mt-3">
+                <div class="col-xl-5 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        <i class="fa fa-book px-3"></i>BMW Modeli 90`
+                    </h6>
+                    <p>
+                    Stranica BMW Modeli Devedesetih je amaterskog tipa, autor je <strong>Ante Šimić</strong>, redovan 
+                    student na Fakultetu Prirodoslovno-Matematičkih i Odgojnih Znanosti na Sveučilištu u Mostaru. Ideja
+                    i kompletan rad su smišljeni te nije korištena pomoć chatGPT-a. Stranica je u <italic>beta</italic>
+                    verziji, time su mogući prekidi u radu ili određene greške na samoj stranici. Stranica je u razvoju
+                    do sredine 2023. Zahvaljujemo Vam na razumijevanju!
+                    </p>
+                </div>
+
+                <!-- Poveznice  -->
+                <div class="col-xl-2 mx-4 mt-0">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                    Poveznice
+                    </h6>
+                    <p>
+                        <a href="#top" class="text-reset" style="text-decoration: none;">Modeli</a>
+                    </p>
+                    <p>
+                        <a href="mailto:sumit@sum.ba" class="text-reset" style="text-decoration: none;">Kontakt</a>
+                    </p>
+                    <p>
+                        Pomoć
+                    </p>
+                    <p>
+                        <a href="O_nama.html" class="text-reset" style="text-decoration: none;">O nama</a>
+                    </p>
+                </div>
+
+                <!-- Kontakt -->
+                <div class="col-xl-3 mx-4 mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mx-4 pt-4 pt-xl-0">Kontakt</h6>
+                    <p> <i class="fa fa-map-marker me-3"></i> Mostar, 88000, BiH </p>
+
+                    <p>
+                        <i class="fa fa-phone me-3"></i>
+                        <a href="tel:+38736355455" class="text-reset" style="text-decoration: none;">+387 36 355 455</a>
+                    </p>
+
+                    <p>
+                        <i class="fa fa-fax me-3"></i>
+                        <a href="fax:+38736355458" class="text-reset" style="text-decoration: none;">+387 36 355 458</a>
+                    </p>
+
+                    <p>
+                        <i class="fa fa-envelope me-3"></i>
+                        <a href="mailto:sumit@sum.ba" class="text-reset" style="text-decoration: none;">sumit@sum.ba</a>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- Dno -->
+            <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.26);">
+            Copyright © 
+            <a class="text-reset fw-bold" href="https://sum.ba/" style="text-decoration: none;">SUMIT</a>
+            2023
+            </div>
+        </footer>
+        <script src="JavaScript/JavaScript_za_BMD.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script>
+            // Prompt se otvara i traži unos korisnika koji će biti verificiran
+            // Korisnik mora unijeti sluzbeni mail od fakulteta (xxx.xxx@xxx.sum.ba)
+            window.onload = loginKorisnika()
+        </script>
+    </body>
+</html>
