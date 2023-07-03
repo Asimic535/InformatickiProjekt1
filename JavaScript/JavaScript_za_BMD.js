@@ -5,8 +5,8 @@ var KORISNIK = 0
 // Svi komentari su izbaceni ispod funkcije jer je zbrka teška, ja ću to usmeno najbolje
 function loginKorisnika() {
     var today = new Date();
-    var datum = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
-    var vrime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var datum = moment().format('L');
+    var vrime = moment().format('LTS');
 
     var istinitost = false
     while (istinitost != true) {
